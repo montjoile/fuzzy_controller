@@ -1,0 +1,90 @@
+[System]
+Name='mobile_robot9'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=30
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='FOD'
+Range=[0 1]
+NumMFs=5
+MF1='very_near':'trapmf',[-0.3333 -0.1667 0.1667 0.3333]
+MF2='near':'trimf',[0.1667 0.3333 0.5]
+MF3='medium':'gaussmf',[0.05 0.5]
+MF4='far':'trimf',[0.5 0.6667 0.8333]
+MF5='very_far':'trapmf',[0.6667 0.8333 1.167 1.333]
+
+[Input2]
+Name='ROD'
+Range=[0 1]
+NumMFs=5
+MF1='very_near':'trapmf',[-0.3333 -0.1667 0.1667 0.3333]
+MF2='near':'trimf',[0.1667 0.3333 0.5]
+MF3='medium':'gaussmf',[0.05 0.5]
+MF4='far':'trimf',[0.5 0.6667 0.8333]
+MF5='very_far':'trapmf',[0.6667 0.8333 1.167 1.333]
+
+[Input3]
+Name='LOD'
+Range=[0 1]
+NumMFs=5
+MF1='very_near':'trapmf',[-0.3333 -0.1667 0.1667 0.3333]
+MF2='near':'trimf',[0.1667 0.3333 0.5]
+MF3='medium':'gaussmf',[0.05 0.5]
+MF4='far':'trimf',[0.5 0.6667 0.8333]
+MF5='very_far':'trapmf',[0.6667 0.8333 1.167 1.333]
+
+[Output1]
+Name='LM'
+Range=[0 5]
+NumMFs=3
+MF1='low':'trimf',[-1 0 1]
+MF2='medium':'gaussmf',[0.75 2.5]
+MF3='high':'trimf',[4 5 6]
+
+[Output2]
+Name='RM'
+Range=[0 5]
+NumMFs=3
+MF1='low':'trimf',[-1 0 1]
+MF2='medium':'gaussmf',[0.75 2.5]
+MF3='high':'trimf',[4 5 6]
+
+[Rules]
+5 0 0, 3 3 (1) : 1
+4 -5 -5, 2 2 (1) : 1
+4 5 0, 3 1 (1) : 1
+4 -5 5, 1 3 (1) : 1
+3 5 0, 3 1 (1) : 1
+3 -5 5, 1 3 (1) : 1
+3 -4 4, 1 3 (1) : 1
+3 4 -5, 3 1 (1) : 1
+3 3 3, 1 1 (1) : 1
+3 1 -1, 1 3 (1) : 1
+3 0 1, 3 1 (1) : 1
+3 2 2, 3 1 (1) : 1
+2 5 0, 3 1 (1) : 1
+2 -5 5, 1 3 (1) : 1
+2 -4 4, 1 3 (1) : 1
+2 4 -5, 3 1 (1) : 1
+2 3 3, 3 1 (1) : 1
+2 2 2, 3 1 (1) : 1
+2 1 -1, 1 3 (1) : 1
+2 0 1, 3 1 (1) : 1
+2 2 -2, 1 3 (1) : 1
+2 -2 2, 3 1 (1) : 1
+1 5 0, 3 1 (1) : 1
+1 -5 5, 1 3 (1) : 1
+1 4 -5, 3 1 (1) : 1
+1 3 3, 3 1 (1) : 1
+1 2 2, 3 1 (1) : 1
+1 1 -1, 1 3 (1) : 1
+1 0 1, 3 1 (1) : 1
+1 1 1, 3 1 (1) : 1
